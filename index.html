@@ -1,14 +1,49 @@
 <html>
+
 <head>
-	
-	<title>dshu&#39;s website</title>
-	<meta name="keywords" content="dshu.me" />
+
+    <title>dshu&#39;s website</title>
+    <meta name="keywords" content="dshu.me" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=3"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=3" />
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            margin: 0;
+            background: #111;
+            overflow: hidden;
+        }
+
+        .glsl-canvas {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
-    grahpic on the road
+    <canvas class="glsl-canvas" data-fragment-url="./fragment.glsl"></canvas>
+    <script>
+        var options = {
+            backgroundColor: 'rgba(0.0, 0.0, 0.0, 0.0)',
+            alpha: true,
+            antialias: true,
+            premultipliedAlpha: false,
+            preserveDrawingBuffer: false,
+            extensions: [],
+            doubleSided: false,
+        };
+        var canvas = document.querySelector('.glsl-canvas');
+        var glsl = new glsl.Canvas(canvas, options);
+        glsl.setUniforms({});
+    </script>
 </body>
+
 </html>
